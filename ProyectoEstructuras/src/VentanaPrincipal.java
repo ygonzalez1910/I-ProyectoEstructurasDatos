@@ -14,11 +14,11 @@ public class VentanaPrincipal extends JFrame {
     private JPanel panel1;
     private JTabbedPane tabbedPane1;
     private JButton empleadoButton;
-    private JTextField textFieldNombre;
-    private JTextField textFieldCedula;
-    private JTextField textFieldNumCuenta;
-    private JTextField textFieldSaldo;
-    private JTextField textFieldBusqueda;
+    private JTextField txtNombreNuevoCliente;
+    private JTextField txtCedulaNuevoCliente;
+    private JTextField txtNoCuentaNuevoCliente;
+    private JTextField txtSaldoNuevoCliente;
+    private JTextField txtCedulaBusqueda;
     private JButton buscarButton;
     private JTable table1;
     private JButton guardarButton;
@@ -31,6 +31,15 @@ public class VentanaPrincipal extends JFrame {
     private JTextField textFieldAgregarSaldo;
     private JButton agregarButton;
     private JTextField textFieldBuscarCedula;
+    private JPanel panelSistemaBancario;
+    private JPanel panelRegistroCliente;
+    private JLabel nombreNuevoCliente;
+    private JLabel cedulaNuevoCliente;
+    private JLabel NoCuentaNuevoCliente;
+    private JLabel saldoNuevoCliente;
+    private JPanel busquedaPanel;
+    private JLabel cedulaBusqueda;
+    private JPanel panelListado;
     private ConjuntoClientes tiposDeClientes;
     private ModeloTablaClientes modeloTablaClientes;
     private Cliente cliente;
@@ -64,8 +73,8 @@ public class VentanaPrincipal extends JFrame {
         guardarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String cedula = textFieldCedula.getText();
-                String nombre = textFieldNombre.getText();
+                String cedula = txtCedulaNuevoCliente.getText();
+                String nombre = txtNombreNuevoCliente.getText();
                 cliente = new Cliente(cedula, nombre);
                 tiposDeClientes.agregar(cliente);
                 colaClientes.offer(cliente);
@@ -82,9 +91,9 @@ public class VentanaPrincipal extends JFrame {
                 limpiarButton.setEnabled(true);
                 borrarButton.setEnabled(true);
                 buscarButton.setEnabled(true);
-                textFieldBusqueda.setEnabled(true);
-                textFieldCedula.setEnabled(true);
-                textFieldNombre.setEnabled(true);
+                txtCedulaBusqueda.setEnabled(true);
+                txtCedulaNuevoCliente.setEnabled(true);
+                txtNombreNuevoCliente.setEnabled(true);
                 table1.setEnabled(true);
                 atenderButton.setEnabled(true);
                 deshacerClienteBorradoButton.setEnabled(true);
@@ -94,11 +103,11 @@ public class VentanaPrincipal extends JFrame {
         limpiarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                textFieldCedula.setText("");
-                textFieldNombre.setText("");
-                textFieldNumCuenta.setText("");
-                textFieldSaldo.setText("");
-                textFieldBusqueda.setText("");
+                txtCedulaNuevoCliente.setText("");
+                txtNombreNuevoCliente.setText("");
+                txtNoCuentaNuevoCliente.setText("");
+                txtSaldoNuevoCliente.setText("");
+                txtCedulaBusqueda.setText("");
             }
         });
         borrarButton.addActionListener(new ActionListener() {
@@ -125,10 +134,10 @@ public class VentanaPrincipal extends JFrame {
                     String estado = (String) table1.getValueAt(filaSeleccionada, 4);
 
                     cedulaGlobal = cedula;
-                    textFieldCedula.setText(cedula);
-                    textFieldNombre.setText(nombre);
-                    textFieldNumCuenta.setText(String.valueOf(numCuenta));
-                    textFieldSaldo.setText(String.valueOf(saldo));
+                    txtCedulaNuevoCliente.setText(cedula);
+                    txtNombreNuevoCliente.setText(nombre);
+                    txtNoCuentaNuevoCliente.setText(String.valueOf(numCuenta));
+                    txtSaldoNuevoCliente.setText(String.valueOf(saldo));
 
 
                 }
@@ -141,9 +150,9 @@ public class VentanaPrincipal extends JFrame {
                 limpiarButton.setEnabled(false);
                 borrarButton.setEnabled(false);
                 buscarButton.setEnabled(false);
-                textFieldBusqueda.setEnabled(false);
-                textFieldCedula.setEnabled(false);
-                textFieldNombre.setEnabled(false);
+                txtCedulaBusqueda.setEnabled(false);
+                txtCedulaNuevoCliente.setEnabled(false);
+                txtNombreNuevoCliente.setEnabled(false);
                 table1.setEnabled(false);
                 atenderButton.setEnabled(false);
                 deshacerClienteBorradoButton.setEnabled(false);
