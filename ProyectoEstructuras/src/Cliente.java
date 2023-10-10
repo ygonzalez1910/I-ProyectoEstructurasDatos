@@ -31,20 +31,6 @@ public class Cliente {
         this.estado = estado;
     }
 
-    public Object[] toArray() {
-        Object[] r = new Object[5];
-        r[0] = cedula;
-        r[1] = nombre;
-        r[2] = numCuenta;
-        r[3] = saldo;
-        r[4] = estado;
-        return r;
-    }
-
-    public static String[] nombreCampos() {
-        return NOMBRE_CAMPOS;
-    }
-
     @Override
     public String toString() {
         return "Cliente{" +
@@ -55,10 +41,7 @@ public class Cliente {
                 ", estado='" + estado + '\'' +
                 '}';
     }
-
-
-    private static final String[] NOMBRE_CAMPOS = {"Cédula", "Nombre", "N° Cuenta", "Saldo", "Estado"};
-    private String cedula;
+ private String cedula;
     private String nombre;
     private long numCuenta;
     private int saldo;
