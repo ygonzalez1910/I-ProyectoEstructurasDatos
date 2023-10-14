@@ -31,6 +31,7 @@ public class Cliente {
         this.estado = estado;
     }
 
+    //prueba
     @Override
     public String toString() {
         return "Cliente{" +
