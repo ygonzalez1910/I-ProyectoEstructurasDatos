@@ -1,4 +1,5 @@
 public class CuentaBancaria {
+    //preba
 
     //setters y getters
     public String getTipoCuenta() {
