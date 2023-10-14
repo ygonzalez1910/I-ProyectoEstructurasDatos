@@ -6,7 +6,6 @@ public class ConjuntoClientes {
     }
 
     public void agregarCliente(String cedula, String nombre) {
-
         Cliente nuevoCliente = new Cliente(cedula, nombre);
         agregar(nuevoCliente);
 
