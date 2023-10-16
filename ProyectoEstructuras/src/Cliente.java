@@ -1,7 +1,7 @@
 import java.util.Random;
 
 //Prueba
-
+//probita
 public class Cliente {
 
     public Cliente(String cedula, String nombre) {
