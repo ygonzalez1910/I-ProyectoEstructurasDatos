@@ -3,13 +3,16 @@ import java.util.Random;
 //Prueba
 //probita
 public class Cliente {
+    private String cedula;
+    private String nombre;
+    private long numCuenta;
+    private int saldo;
 
     public Cliente(String cedula, String nombre) {
         this.cedula = cedula;
         this.nombre = nombre;
         this.numCuenta = generarNumCuenta();
         this.saldo  = 0;
-        this.estado = "Pendiente";
     }
 
     public String getCedula() {
@@ -26,30 +29,16 @@ public class Cliente {
     public int getSaldo() {
         return saldo;
     }
-    public String getEstado() {
-        return estado;
-    }
-    public void setEstado(String estado) {
-        this.estado = estado;
-    }
 
-    //prueba
     @Override
     public String toString() {
         return "Cliente{" +
                 "cedula='" + cedula + '\'' +
                 ", nombre='" + nombre + '\'' +
-                ",N° Cuenta =" + numCuenta +
+                ", numCuenta=" + numCuenta +
                 ", saldo=" + saldo +
-                ", estado='" + estado + '\'' +
                 '}';
     }
- private String cedula;
-    private String nombre;
-    private long numCuenta;
-    private int saldo;
-    private String estado;
-
 
     private long generarNumCuenta(){
         Random r = new Random();
