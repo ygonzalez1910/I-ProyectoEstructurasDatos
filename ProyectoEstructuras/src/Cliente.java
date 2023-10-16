@@ -1,53 +1,51 @@
-import java.util.Random;
+import java.util.List;
 
 //Prueba
-//probita
+
 public class Cliente {
     private String cedula;
     private String nombre;
-    private long numCuenta;
-    private int saldo;
+    private String numeroTelefonico;
+    private CuentaBancaria cuentaBancaria;
+    private List<Solicitud> historialSolicitudes;
 
-    public Cliente(String cedula, String nombre) {
-        this.cedula = cedula;
+    public Cliente(CuentaBancaria cuentaBancaria, String nombre, String cedula, String noTelefono) {
+        this.cuentaBancaria = cuentaBancaria;
         this.nombre = nombre;
-        this.numCuenta = generarNumCuenta();
-        this.saldo  = 0;
+        this.cedula = cedula;
+        this.numeroTelefonico = noTelefono;
+
     }
 
-    public String getCedula() {
-        return cedula;
-    }
+   public void crearCuentaDebito(){
 
-    public String getNombre() {
-        return nombre;
-    }
+   }
+   public void crearCuentaCredito(){
 
-    public long getNumCuenta() {
-        return numCuenta;
-    }
-    public int getSaldo() {
-        return saldo;
-    }
+   }
+   public String generarDeposito(double montoDeposito){
+
+       return "";
+   }
+
+   public void mostrarHistorial(){
+
+   }
+   public void mostrarCuentas(){
+
+   }
 
     @Override
     public String toString() {
         return "Cliente{" +
                 "cedula='" + cedula + '\'' +
                 ", nombre='" + nombre + '\'' +
-                ", numCuenta=" + numCuenta +
-                ", saldo=" + saldo +
+                ", numeroTelefonico='" + numeroTelefonico + '\'' +
+                ", cuentaBancaria=" + cuentaBancaria.toString() +
+                ", historialSolicitudes=" + historialSolicitudes +
                 '}';
     }
 
-    private long generarNumCuenta(){
-        Random r = new Random();
-        StringBuilder numCuenta = new StringBuilder();
-        for (int i = 0; i < 10; i++) {
-            long digito = r.nextInt(10);
-            numCuenta.append(digito);
-        }
-        return Long.parseLong(numCuenta.toString());
-    }
+
 
 }
