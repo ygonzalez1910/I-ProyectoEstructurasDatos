@@ -1,19 +1,46 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        // Press Opt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
 
-        // Press Ctrl+R or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+        Scanner scanner = new Scanner(System.in);
 
-            // Press Ctrl+D to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Cmd+F8.
-            System.out.println("i = " + i);
+        // Solicitar información del cliente
+        System.out.print("Ingrese el nombre del cliente: ");
+        String nombre = scanner.nextLine();
+
+        System.out.print("Ingrese la cédula del cliente: ");
+        String cedula = scanner.nextLine();
+
+        System.out.print("Ingrese el número de teléfono del cliente: ");
+        String numeroTelefono = scanner.nextLine();
+
+        // Crear un cliente con la información ingresada
+        Cliente cliente = new Cliente(nombre, cedula, numeroTelefono);
+
+        // Mostrar información del cliente
+        System.out.println("Información del cliente:");
+        System.out.println(cliente);
+
+        System.out.println("\nDesea abrir una cuenta de crédito (S/N)?");
+        String respuesta = scanner.nextLine();
+        if (respuesta.equalsIgnoreCase("S")) {
+            cliente.crearCuentaCredito();
+
+            // Mostrar el saldo de la cuenta de crédito
+            System.out.println("\nSaldo de la cuenta de crédito: $" + cliente.getCuentaCredito().getSaldo());
+        } else {
+            System.out.println("No se ha abierto una cuenta de crédito.");
         }
 
-        System.out.println("Hola");
+        // Mostrar información de cuenta de crédito
+        System.out.println("Información de la cuenta de crédito:");
+        if (cliente.getCuentaCredito() != null) {
+            System.out.println(cliente.getCuentaCredito());
+        } else {
+            System.out.println("No se ha abierto una cuenta de crédito.");
+        }
+
+
     }
 }

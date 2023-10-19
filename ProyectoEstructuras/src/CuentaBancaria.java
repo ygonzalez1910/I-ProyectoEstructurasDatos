@@ -3,6 +3,12 @@ import java.util.Random;
 public class CuentaBancaria {
   private long numCuenta;
   private double saldo;
+  private String nombreCliente;
+  private String cedulaCliente;
+  private String numeroTelefonoCliente;
+
+
+
     private long generarNumCuenta(){
         Random r = new Random();
         StringBuilder numCuenta = new StringBuilder();
@@ -13,9 +19,23 @@ public class CuentaBancaria {
         return Long.parseLong(numCuenta.toString());
     }
 
+
     public double getSaldo() {
         return saldo;
     }
+
+    public void setNombreCliente(String nombre) {
+        this.nombreCliente = nombre;
+    }
+
+    public void setCedulaCliente(String cedula) {
+        this.cedulaCliente = cedula;
+    }
+
+    public void setNumeroTelefonoCliente(String numeroTelefono) {
+        this.numeroTelefonoCliente = numeroTelefono;
+    }
+
 
     //constructor con parametros para poder heredar a cuentaCredito
     public CuentaBancaria(String numCuenta, double saldo) {
@@ -40,3 +60,4 @@ public class CuentaBancaria {
                 '}';
     }
 }
+

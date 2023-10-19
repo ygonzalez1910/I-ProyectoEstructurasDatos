@@ -7,20 +7,27 @@ public class Cliente {
     private String nombre;
     private String numeroTelefonico;
     private CuentaBancaria cuentaBancaria;
+    private static CuentaCredito cuentaCredito;
     private List<Solicitud> historialSolicitudes;
 
-    public Cliente(CuentaBancaria cuentaBancaria, String nombre, String cedula, String noTelefono) {
-        this.cuentaBancaria = cuentaBancaria;
+    public Cliente(String nombre, String cedula, String noTelefono) {
+        this.cuentaBancaria = new CuentaBancaria();
         this.nombre = nombre;
         this.cedula = cedula;
         this.numeroTelefonico = noTelefono;
 
     }
 
+    public static CuentaCredito getCuentaCredito() {
+        return cuentaCredito;
+    }
+
    public void crearCuentaDebito(){
 
    }
    public void crearCuentaCredito(){
+
+       this.cuentaCredito = new CuentaCredito(nombre, cedula, numeroTelefonico);
 
    }
    public String generarDeposito(double montoDeposito){
