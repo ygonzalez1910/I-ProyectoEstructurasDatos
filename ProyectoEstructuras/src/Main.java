@@ -3,6 +3,9 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
+        //aca se tiene el empleado de forma provisionarl (se debe inicializar con los daos que digite el usuario
+        Empleado empleado = new Empleado("");
+
         Scanner scanner = new Scanner(System.in);
 
         // Solicitar información del cliente
@@ -17,6 +20,13 @@ public class Main {
 
         // Crear un cliente con la información ingresada
         Cliente cliente = new Cliente(nombre, cedula, numeroTelefono);
+
+        //agrega el cliente a la lista
+        empleado.agregarCliente(cliente);
+
+        cliente.setNombre(nombre);
+        cliente.setCedula(cedula);
+        cliente.setNumeroTelefonico(numeroTelefono);
 
         // Mostrar información del cliente
         System.out.println("Información del cliente:");
@@ -40,6 +50,7 @@ public class Main {
         } else {
             System.out.println("No se ha abierto una cuenta de crédito.");
         }
+
 
 
     }
